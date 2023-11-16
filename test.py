@@ -58,11 +58,6 @@ class Output(BaseModel):
     output: str
 
 
-
-@app.get("/")
-async def process_parameters(param1: str, param2: int, param3: float):
-    return {"param1": param1, "param2": param2, "param3": param3}
-
 add_routes(app, agent_executor.with_types(input_type=Input, output_type=Output))
 
 if __name__ == "__main__":

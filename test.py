@@ -63,3 +63,13 @@ add_routes(app, agent_executor.with_types(input_type=Input, output_type=Output))
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="localhost", port=8000)
+
+
+
+from langchain import PromptTemplate
+# Define the input variables
+input_variables = ['database_data', 'file_data']
+# Define the template
+template = """The database data is {{database_data}} and the file data is {{file_data}}."""
+# Create the prompt template
+prompt_template = PromptTemplate(input_variables=input_variables, template=template)

@@ -83,4 +83,23 @@ waveform, sample_rate = load_audio_from_mp3(file_path)
 
 print(f"Sampling rate: {sample_rate}")
 # You can now use 'waveform' and 'sample_rate' as needed in your application
+--------------------
+
+from pydub import AudioSegment
+from pydub.playback import play
+import io
+
+# Load an MP3 file
+def load_mp3(file_path):
+    audio = AudioSegment.from_mp3(file_path)
+    return audio
+
+# Play the audio
+def play_audio(audio):
+    play(audio)
+
+# Example usage
+file_path = '/path/to/your/file.mp3'  # Replace with your MP3 file path
+audio = load_mp3(file_path)
+play_audio(audio)
 

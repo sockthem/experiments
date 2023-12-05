@@ -60,3 +60,27 @@ file_path = 'your_mp3_file_path.mp3'
 
 # Upload the file using seamlessm4t
 audio_data = sm4t.upload(file_path)
+______________________
+
+import torchaudio
+
+def load_audio_from_mp3(file_path):
+    """
+    Load an audio sample from a given MP3 file.
+    
+    Args:
+    file_path (str): The path to the MP3 file.
+
+    Returns:
+    Tuple[Tensor, int]: A tuple containing the audio waveform and the sampling rate.
+    """
+    waveform, sample_rate = torchaudio.load(file_path)
+    return waveform, sample_rate
+
+# Example usage
+file_path = '/path/to/your/file.mp3'  # Replace with your MP3 file path
+waveform, sample_rate = load_audio_from_mp3(file_path)
+
+print(f"Sampling rate: {sample_rate}")
+# You can now use 'waveform' and 'sample_rate' as needed in your application
+

@@ -51,3 +51,12 @@ def recognize_from_microphone():
             print("Did you set the speech resource key and region values?")
 
 recognize_from_microphone()
+----------------
+
+import seamlessm4t as sm4t
+
+# Replace 'your_mp3_file_path.mp3' with the path of your MP3 file
+file_path = 'your_mp3_file_path.mp3'
+
+# Upload the file using seamlessm4t
+audio_data = sm4t.upload(file_path)

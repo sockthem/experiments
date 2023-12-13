@@ -73,3 +73,6 @@ input_variables = ['database_data', 'file_data']
 template = """The database data is {{database_data}} and the file data is {{file_data}}."""
 # Create the prompt template
 prompt_template = PromptTemplate(input_variables=input_variables, template=template)
+
+
+#https://docs.streamlit.io/library/advanced-features/session-state
